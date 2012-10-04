@@ -2,63 +2,73 @@
 	<h2><?php echo __('Projects'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('nome'); ?></th>
-			<th><?php echo $this->Paginator->sort('paese'); ?></th>
-			<th><?php echo $this->Paginator->sort('priorita'); ?></th>
-			<th><?php echo $this->Paginator->sort('settore'); ?></th>
-			<th><?php echo $this->Paginator->sort('stato'); ?></th>
-			<th><?php echo $this->Paginator->sort('osservazioni'); ?></th>
-			<th><?php echo $this->Paginator->sort('pagato_con_cassa'); ?></th>
-			<th><?php echo $this->Paginator->sort('localita'); ?></th>
-			<th><?php echo $this->Paginator->sort('diocesi'); ?></th>
-			<th><?php echo $this->Paginator->sort('proposto_da'); ?></th>
-			<th><?php echo $this->Paginator->sort('referente'); ?></th>
-			<th><?php echo $this->Paginator->sort('costo_locale'); ?></th>
-			<th><?php echo $this->Paginator->sort('costo_euro'); ?></th>
-			<th><?php echo $this->Paginator->sort('da_raccogliere'); ?></th>
-			<th><?php echo $this->Paginator->sort('da_inviare'); ?></th>
-			<th><?php echo $this->Paginator->sort('inviati'); ?></th>
-			<th><?php echo $this->Paginator->sort('breve_descrizione'); ?></th>
-			<th><?php echo $this->Paginator->sort('rapporto_sponsor'); ?></th>
-			<th><?php echo $this->Paginator->sort('data_agg_sponsor'); ?></th>
-			<th><?php echo $this->Paginator->sort('verifica_progetto'); ?></th>
-			<th><?php echo $this->Paginator->sort('data_verifica'); ?></th>
-			<th><?php echo $this->Paginator->sort('esito'); ?></th>
-			<th><?php echo $this->Paginator->sort('visible_sul_sito'); ?></th>
-			<th><?php echo $this->Paginator->sort('data_inserimento'); ?></th>
-			<th><?php echo $this->Paginator->sort('utente'); ?></th>
-			<th><?php echo $this->Paginator->sort('data_modifica'); ?></th>
+			<th><?php echo $this->Paginator->sort('project_name'); ?></th>
+			<th><?php echo $this->Paginator->sort('country_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('priority_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('area_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('state_id'); ?></th>
+			<!-- <th><?php echo $this->Paginator->sort('remarks'); ?></th>
+			<th><?php echo $this->Paginator->sort('paid_with_cash'); ?></th>
+			<th><?php echo $this->Paginator->sort('place'); ?></th>
+			<th><?php echo $this->Paginator->sort('diocese'); ?></th>
+			<th><?php echo $this->Paginator->sort('suggested_by'); ?></th>
+			<th><?php echo $this->Paginator->sort('contact'); ?></th>
+			<th><?php echo $this->Paginator->sort('local_cost'); ?></th>
+			<th><?php echo $this->Paginator->sort('euro_cost'); ?></th>
+			<th><?php echo $this->Paginator->sort('to_raise'); ?></th>
+			<th><?php echo $this->Paginator->sort('to_send'); ?></th>
+			<th><?php echo $this->Paginator->sort('sent'); ?></th>
+			<th><?php echo $this->Paginator->sort('short_description'); ?></th>
+			<th><?php echo $this->Paginator->sort('sponsor'); ?></th>
+			<th><?php echo $this->Paginator->sort('sponsor_added_date'); ?></th>
+			<th><?php echo $this->Paginator->sort('project_verified'); ?></th>
+			<th><?php echo $this->Paginator->sort('verification_date'); ?></th>
+			<th><?php echo $this->Paginator->sort('result_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('visible_on_website'); ?></th>
+			<th><?php echo $this->Paginator->sort('insertion_date'); ?></th>
+			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('modified_date'); ?></th> //-->
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
 	foreach ($projects as $project): ?>
 	<tr>
-		<td><?php echo h($project['Project']['nome']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['paese']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['priorita']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['settore']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['stato']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['osservazioni']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['pagato_con_cassa']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['localita']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['diocesi']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['proposto_da']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['referente']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['costo_locale']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['costo_euro']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['da_raccogliere']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['da_inviare']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['inviati']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['breve_descrizione']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['rapporto_sponsor']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['data_agg_sponsor']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['verifica_progetto']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['data_verifica']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['esito']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['visible_sul_sito']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['data_inserimento']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['utente']); ?>&nbsp;</td>
-		<td><?php echo h($project['Project']['data_modifica']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['project_name']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($project['Country']['name'], array('controller' => 'countries', 'action' => 'view', $project['Country']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $this->Html->link($project['Priority']['name'], array('controller' => 'priorities', 'action' => 'view', $project['Priority']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $this->Html->link($project['Area']['name'], array('controller' => 'areas', 'action' => 'view', $project['Area']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $this->Html->link($project['State']['name'], array('controller' => 'states', 'action' => 'view', $project['State']['id'])); ?>
+		</td>
+		<!-- <td><?php echo h($project['Project']['remarks']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['paid_with_cash']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['place']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['diocese']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['suggested_by']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['contact']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['local_cost']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['euro_cost']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['to_raise']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['to_send']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['sent']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['short_description']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['sponsor']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['sponsor_added_date']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['project_verified']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['verification_date']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['result_id']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['visible_on_website']); ?>&nbsp;</td>
+		<td><?php echo h($project['Project']['insertion_date']); ?>&nbsp;</td>
+		<td>
+                    <?php echo $this->Html->link($project['User']['username'], array ('controller' => 'users', 'action' => 'view', $project['User']['id'])); ?>
+                </td>
+		<td><?php echo h($project['Project']['modified_date']); ?>&nbsp;</td> //-->
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $project['Project']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $project['Project']['id'])); ?>
@@ -86,5 +96,15 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Project'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Countries'), array('controller' => 'countries', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Country'), array('controller' => 'countries', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Priorities'), array('controller' => 'priorities', 'action' => 'index')); ?> </li>
+		<!-- <li><?php echo $this->Html->link(__('New Priority'), array('controller' => 'priorities', 'action' => 'add')); ?> </li> // -->
+		<li><?php echo $this->Html->link(__('List Areas'), array('controller' => 'areas', 'action' => 'index')); ?> </li>
+		<!-- <li><?php echo $this->Html->link(__('New Area'), array('controller' => 'areas', 'action' => 'add')); ?> </li> // -->
+		<li><?php echo $this->Html->link(__('List States'), array('controller' => 'states', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New State'), array('controller' => 'states', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Donations'), array('controller' => 'donations', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Donation'), array('controller' => 'donations', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
