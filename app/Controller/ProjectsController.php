@@ -65,7 +65,8 @@ class ProjectsController extends AppController {
 		$priorities = $this->Project->Priority->find('list');
 		$areas = $this->Project->Area->find('list');
 		$states = $this->Project->State->find('list');
-		$this->set(compact('countries', 'priorities', 'areas', 'states'));
+		$results = $this->Project->Result->find('list');
+		$this->set(compact('countries', 'priorities', 'areas', 'states', 'results'));
 	}
 
 /**
@@ -104,7 +105,8 @@ class ProjectsController extends AppController {
 		$priorities = $this->Project->Priority->find('list');
 		$areas = $this->Project->Area->find('list');
 		$states = $this->Project->State->find('list');
-		$this->set(compact('countries', 'priorities', 'areas', 'states'));
+		$results = $this->Project->Result->find('list');
+		$this->set(compact('countries', 'priorities', 'areas', 'states', 'results'));
 	}
 
 /**
