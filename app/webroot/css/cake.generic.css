@@ -737,3 +737,14 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+
+div.authentication_box {
+	float: right;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div.authentication_box a {
+	color: white;
+}

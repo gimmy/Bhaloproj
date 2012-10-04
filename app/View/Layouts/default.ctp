@@ -40,6 +40,16 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link('Bhalobasa - Gestione progetti', '/'); ?></h1>
+			<div class="authentication_box"><?php if (AuthComponent::user('id')) {
+				echo "You're logged in in as " . AuthComponent::user('username') . " [";
+				echo $this->Html->link(__('Logout'), 
+					array ('controller' => 'users', 'action' => 'logout'));
+                                echo "]";
+				}
+				else {
+					echo $this->Html->link (__('Login'), array ('controller' => 'users', 'action' => 'login'));
+				} ?>
+			</div>
 		</div>
 		<div id="content">
 
