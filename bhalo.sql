@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2012 at 08:57 AM
+-- Generation Time: Oct 04, 2012 at 09:49 AM
 -- Server version: 5.1.63
 -- PHP Version: 5.3.2-1ubuntu4.18
 
@@ -27,9 +27,9 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE IF NOT EXISTS `areas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `areas`
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `areas` (
 
 INSERT INTO `areas` (`id`, `name`) VALUES
 (1, 'Emergenze'),
-(2, 'Sanita'),
+(2, 'SanitÃ '),
 (3, 'Istruzione'),
 (4, 'Microcredito'),
 (5, 'Altro');
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `countries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `countries`
@@ -73,11 +73,11 @@ CREATE TABLE IF NOT EXISTS `donations` (
   `indications` text NOT NULL,
   `letter` tinyint(1) DEFAULT NULL,
   `sent` tinyint(1) NOT NULL,
-  `insertion_date` date NOT NULL,
+  `insertion_date` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
-  `edit_date` date NOT NULL,
+  `edit_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `donations`
@@ -99,11 +99,11 @@ CREATE TABLE IF NOT EXISTS `donors` (
   `phone` varchar(15) NOT NULL,
   `mobile_phone` varchar(15) NOT NULL,
   `email` varchar(25) NOT NULL,
-  `insertion_date` date NOT NULL,
+  `insertion_date` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
-  `edit_date` date NOT NULL,
+  `edit_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `donors`
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `priorities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `priorities`
@@ -162,11 +162,11 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `verification_date` date DEFAULT NULL,
   `result_id` int(11) NOT NULL,
   `visible_on_website` tinyint(1) NOT NULL,
-  `insertion_date` date DEFAULT NULL,
+  `insertion_date` datetime DEFAULT NULL,
   `user_id` int(11) NOT NULL,
-  `modified_date` date DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `projects`
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `results` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `results`
@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `states` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `states`
@@ -218,3 +218,20 @@ INSERT INTO `states` (`id`, `name`) VALUES
 (4, 'Sospeso'),
 (5, 'Da realizzare'),
 (6, 'Somma inviata');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+

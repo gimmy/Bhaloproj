@@ -32,4 +32,20 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+	public $components = array (
+		'Session',
+		'Auth' => array (
+			'loginRedirect' => array('controller' => 'projects', 'action' => 'index'),
+			'logoutRedirect' => array('controller' => 'projects', 'action' => 'index')
+		)
+	);
+
+	public function beforeFilter () {
+		// This may be useful in the case we'd like to add
+		// unregistered users to view the content without
+		// editing it. 
+		// $this->Auth->allow('index', 'view');
+	}
+
 }
