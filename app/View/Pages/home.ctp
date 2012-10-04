@@ -18,6 +18,10 @@
     <?php echo $this->Html->link (__("Manage users"), array (
 	'controller' => 'users', 'action' => 'index')); ?>
   </li>
+  <li>
+    <?php echo $this->Html->link (__("Manage donors"), array (
+	'controller' => 'donors', 'action' => 'index')); ?>
+  </li>
 </ul>
 </div>
 
